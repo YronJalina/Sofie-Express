@@ -1,0 +1,14 @@
+let flights=[{date:"2026-02-24",route:"Manila → Dubai",capacity:46,totalCapacity:46},{date:"2026-02-26",route:"Manila → Dubai",capacity:115,totalCapacity:115}];
+const flightsContainer=document.getElementById('flights-container');
+function renderFlights(){flightsContainer.innerHTML='';const now=new Date();flights.forEach((flight)=>{const flightDate=new Date(flight.date);const isNextFlight=flightDate>=now&&(!flights.some(f=>new Date(f.date)>=now&&new Date(f.date)<flightDate));const card=document.createElement('div');card.className='flight-card';if(isNextFlight)card.classList.add('next-flight');const progressPercent=Math.floor((flight.capacity/flight.totalCapacity)*100);card.innerHTML=`${isNextFlight?'<div class="badge">Next Flight</div>':''}<h3>${flight.route}</h3><p>Date: ${flight.date}</p><div class="progress-bar"><div class="progress-fill" style="width:${progressPercent}%"></div></div><p><strong>${flight.capacity} KG Available</strong></p>`;flightsContainer.appendChild(card);});}
+renderFlights();
+function updateFlightKG(index,newKG){flights[index].capacity=newKG;renderFlights();}
+const hero=document.querySelector('.hero');document.addEventListener('mousemove',e=>{const moveX=(e.clientX-window.innerWidth/2)*0.01;const moveY=(e.clientY-window.innerHeight/2)*0.01;hero.style.backgroundPosition=`${50+moveX}% ${50+moveY}%`;});
+document.querySelectorAll('.navbar a').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+const cursor=document.createElement('div');cursor.classList.add('cursor');document.body.appendChild(cursor);
+const particles=[];for(let i=0;i<15;i++){const p=document.createElement('div');p.classList.add('particle');document.body.appendChild(p);particles.push({el:p,x:0,y:0});}
+let mouseX=0,mouseY=0;document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursor.style.top=mouseY+'px';cursor.style.left=mouseX+'px';});
+function animateParticles(){let x=mouseX,y=mouseY;particles.forEach(p=>{p.x+=(x-p.x)*0.3;p.y+=(y-p.y)*0.3;p.el.style.top=p.y+'px';p.el.style.left=p.x+'px';x=p.x;y=p.y;});requestAnimationFrame(animateParticles);}
+animateParticles();
+document.querySelectorAll('a, button').forEach(el=>{el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%, -50%) scale(2)';cursor.style.backgroundColor='rgba(255,122,0,0.4)';});el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%, -50%) scale(1)';cursor.style.backgroundColor='rgba(255,122,0,0.8)';});});
+document.getElementById('bookingForm').addEventListener('submit',function(e){alert('Thank you! Your booking has been submitted.');});
