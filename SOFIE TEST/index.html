@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofie Express</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Sofie Express</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#flights-rates">Flights & Rates</a>
+    <a href="#locations-booking">Locations & Booking</a>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Dubai ↔ Manila</h1>
+    <p>Fast, secure, personal flight delivery ✈️📦</p>
+    <a href="#locations-booking" class="cta">Book Your Shipment</a>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61588387670282" target="_blank">
+        <img src="https://i.ibb.co/TgDK4bK/facebook-icon.png" alt="Facebook"> Facebook
+      </a>
+      <a href="https://wa.me/971589798323" target="_blank">
+        <img src="https://i.ibb.co/pfZ3gLt/whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+      </a>
+      <a href="tel:+639485376303">
+        <img src="https://i.ibb.co/YW7VhHj/phone-icon.png" alt="Phone"> +63 948 537 6303
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHTS + RATES SECTION -->
+<section class="flights-rates" id="flights-rates">
+  <h2>Flight Schedule & Capacity</h2>
+  <div id="flights-container"></div>
+
+  <h2>Rates</h2>
+  <div class="rate-card">
+    <h3>35 AED per KG</h3>
+  </div>
+</section>
+
+<!-- LOCATIONS + BOOKING + FOOTER SECTION -->
+<section class="locations-booking" id="locations-booking">
+  <h2>Our Locations</h2>
+  <div class="location-card">
+    <p>🇦🇪 Jumeirah, Dubai</p>
+    <p>🇵🇭 Rizal (near Metro Manila)</p>
+  </div>
+
+  <h2>Book Your Shipment</h2>
+  <form id="bookingForm" action="https://formspree.io/f/xojkwrkd" method="POST">
+    <input type="hidden" name="_subject" value="New Sofie Express Booking">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="phone" placeholder="Phone / WhatsApp" required>
+    <input type="text" name="item" placeholder="Item Description" required>
+    <input type="number" name="weight" placeholder="Weight (kg)" required>
+    <input type="text" name="pickup" placeholder="Pickup Location">
+    <input type="text" name="delivery" placeholder="Delivery Location">
+    <button type="submit">Submit Booking</button>
+  </form>
+
+  <footer>
+    <p>Sofie Express © 2026 | Dubai ↔ Manila Personal Flight</p>
+    <div class="socials-inline">
+      <a href="https://www.facebook.com/profile.php?id=61588387670282" target="_blank">Facebook</a> |
+      <a href="https://wa.me/971589798323" target="_blank">WhatsApp</a> |
+      <a href="tel:+639485376303">PH: +63 948 537 6303</a>
+    </div>
+  </footer>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

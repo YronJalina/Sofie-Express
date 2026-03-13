@@ -1,0 +1,44 @@
+/* Reset & body */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#f5f7fb;color:#222;scroll-behavior:smooth;}
+
+/* NAVBAR */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:#0c2d57;color:white;position:fixed;width:100%;z-index:100;}
+.navbar nav a{color:white;margin-left:20px;text-decoration:none;transition:0.3s;} 
+.navbar nav a:hover{color:#ff7a00;} 
+.logo{font-weight:bold;font-size:20px;}
+
+/* HERO */
+.hero{width:100%;text-align:center;overflow:hidden;color:white;position:relative;padding:100px 20px;}
+.hero::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://i.ibb.co/Xx0C8bY/dubai-manila-collage.jpg') center/cover no-repeat;z-index:0;transform:translateZ(0);transition:transform 0.3s ease;}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:1;}
+.hero-content{position:relative;z-index:2;max-width:900px;margin:auto;}
+.hero h1{font-size:48px;margin-bottom:10px;}
+.hero p{font-size:20px;margin-bottom:15px;}
+.cta{display:inline-block;margin-top:20px;padding:12px 30px;background:#ff7a00;color:white;text-decoration:none;border-radius:6px;transition:0.3s;}
+.cta:hover{background:#e66a00;}
+.socials a{color:white;text-decoration:none;margin:0 10px;display:inline-flex;align-items:center;transition:0.3s;}
+.socials a img{width:20px;height:20px;margin-right:5px;}
+.socials a:hover{color:#ff7a00;}
+
+/* FLIGHTS + RATES */
+.flights-rates{padding:80px 20px;background:#f0f2f8;text-align:center;}
+.flight-card, .rate-card{background:white;padding:25px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin:15px;display:inline-block;min-width:200px;transition:0.3s;}
+.next-flight{background:linear-gradient(-45deg,#ff7a00,#ffb347,#ff7a00,#ffb347);background-size:400% 400%;animation:gradientMove 10s ease infinite;color:white;box-shadow:0 0 25px rgba(255,122,0,0.7);}
+.badge{display:inline-block;padding:5px 12px;background:white;color:#ff7a00;font-weight:bold;border-radius:6px;margin-bottom:12px;}
+.progress-bar{width:100%;height:12px;background:#ddd;border-radius:6px;overflow:hidden;margin:10px 0;}
+.progress-fill{height:100%;background:linear-gradient(90deg,#00ff99,#00ccff);transition:width 0.5s ease;}
+
+/* LOCATIONS + BOOKING + FOOTER */
+.locations-booking{padding:80px 20px;text-align:center;}
+.location-card{background:white;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);margin:15px;display:inline-block;}
+.booking form{max-width:400px;margin:auto;display:flex;flex-direction:column;}
+.booking input{padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:6px;}
+.booking button{padding:12px;background:#0c2d57;color:white;border:none;border-radius:6px;cursor:pointer;transition:0.3s;}
+.booking button:hover{background:#094072;}
+footer{padding:30px;background:#111;color:white;text-align:center;}
+footer .socials-inline a{color:white;text-decoration:none;margin:0 8px;transition:0.3s;}
+footer .socials-inline a:hover{color:#ff7a00;}
+
+/* Animations */
+@keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
